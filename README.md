@@ -1,2 +1,2 @@
 # RTOS_Sample
-最初にRTOSをdsPICに組み込む
+FreeRTOSv8.2.2をdsPIC30F6014A用に移植したものです。
