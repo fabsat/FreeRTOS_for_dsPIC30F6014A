@@ -318,7 +318,8 @@ extern "C" {
 #endif
 
 #ifndef portPOINTER_SIZE_TYPE
-	#define portPOINTER_SIZE_TYPE uint32_t
+	//#define portPOINTER_SIZE_TYPE uint32_t
+    #define portPOINTER_SIZE_TYPE uint16_t
 #endif
 
 /* Remove any unused trace macros. */

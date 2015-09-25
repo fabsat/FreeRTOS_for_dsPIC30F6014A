@@ -68,7 +68,7 @@ int main(void){
     PORTF = 0x00;   /* PORTFを初期化 */
     LATF  = 0x38;   /* RF3、4、5消灯 */
     
-    
+
     /* タスク作成 */
     xTaskCreate( vTask1, "T1", 100, NULL, 1, NULL );
     xTaskCreate( vTask2, "T2", 100, NULL, 1, NULL );
@@ -86,7 +86,7 @@ int main(void){
  ***********************************************************/
 void vTask1( void *pvParameters){
     while(1){
-        LATFbits.LATF3 ^= LATFbits.LATF3;
+        LATFbits.LATF3 = ~LATFbits.LATF3;
         vTaskDelay(100 / portTICK_RATE_MS);
     }
 }
@@ -97,7 +97,7 @@ void vTask1( void *pvParameters){
 
 void vTask2( void *pvParameters){
     while(1){
-        LATFbits.LATF4 ^= LATFbits.LATF4;
+        LATFbits.LATF4 = ~LATFbits.LATF4;
         vTaskDelay(200 / portTICK_RATE_MS);
     }
 }
@@ -108,7 +108,7 @@ void vTask2( void *pvParameters){
 
 void vTask3( void *pvParameters){
     while(1){
-        LATFbits.LATF5 ^= LATFbits.LATF5;
-        vTaskDelay(300 / portTICK_RATE_MS);
+        LATFbits.LATF5 = ~LATFbits.LATF5;
+        vTaskDelay(500 / portTICK_RATE_MS);
     }
 }
